@@ -1,0 +1,178 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HexaCore System</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+
+<body id="inicio">
+   
+    <div id="tela_inicial">
+       
+        <button  onclick="iniciado()" id="bt_inicio">Aceito e concordo com as regras</button>
+
+    </div>
+    
+
+    <div id="container" style="display: none;">
+        <h1 id="my_h1">HexaCore System</h1>
+        <input id="input_decimal" type="number" placeholder="Digite um número decimal">
+        <br><br>
+        <button onclick="converterCaracter()">Converter</button>
+        <div id="div_output"></div>
+        <div id="jeff"></div>
+    </div>
+
+    <div id="div"></div>
+    <div id="tela_final">
+       
+    </div>
+
+    <div id="div_cartaz"> <img src="cartaz.jpg" alt="jeff" width="500"></div><div id="div_cartaz"> <img src="cartaz.jpg" alt="jeff" width="500"></div> <div id="div_cartaz"> <img src="cartaz.jpg" alt="jeff" width="500"></div>   
+    <audio id="som-terror" src="A1 - It's just a burning memory - The Caretaker (youtube).mp3"></audio>
+
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            width: 80%;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+      
+
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 20px auto;
+            background: #26ff05;
+            color: black;
+            border: none;
+        }
+
+        select,
+        button {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            background:none;
+            color: #26ff05  ;
+            border: none;
+        }
+
+        #div_output {
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            background: none;
+            text-align: left;
+            display: none;
+            color: #4dff00;
+        }
+    </style>
+
+</body>
+
+
+<!--tela de converção-->
+
+
+    
+
+
+
+<script>
+  document.getElementById('som-terror').play();
+    function iniciado() {
+    document.getElementById('som-terror').play();
+    document.documentElement.style.backgroundColor = "#fcfcf7";
+    document.body.style.backgroundColor = "#fcfcf7";
+
+    var tela_1 = document.getElementById('tela_inicial'); 
+
+    tela_1.style.display = 'none';
+
+    var maquina = document.getElementById('container'); 
+
+    maquina.style.display = 'block';
+
+    if (tela_1 && maquina) {
+        tela_1.style.display = 'none';
+        maquina.style.display = 'block';
+    }
+
+}
+
+
+
+
+
+
+
+
+    function converterCaracter() {
+        document.getElementById('som-terror').play();
+
+        div_output.innerHTML = '';
+
+        var decimal = Number(input_decimal.value);
+
+
+        div_output.style.display = 'block';
+
+        jeff.innerHTML = ''
+
+        div_output.innerHTML += "<b>Octal: </b>" + decimal.toString(8) + '<br>';
+        div_output.innerHTML += "<b>Binário: </b>" + decimal.toString(2) + '<br>';
+        div_output.innerHTML += "<b>Hexadecimal: </b>" + decimal.toString(16) + '<br>'; 
+        div_output.innerHTML += 'Jeff: vazio'
+        
+
+
+        var input = document.getElementById('input_decimal');
+        var caractere = input.value;
+        var resultado = document.getElementById('div_output');
+
+        if (caractere == '') { 
+
+            var musica = document.getElementById('som-terror');
+            musica.pause(); 
+            musica.currentTime = 0;
+        
+            document.body.style.backgroundColor = "black";
+            document.documentElement.style.backgroundColor = "black";
+            tela_final.innerHTML += `<video src="Video.mp4" width="400" autoplay></video>`
+           jeff.innerHTML += 'Aquivo morto' 
+           div.innerHTML += 'ARQUIVO MORTO'
+            document.getElementById('container').style.display = 'none';
+
+        } else if (input !== "") {
+                musica.play();
+                const ascii = input.charCodeAt(0);
+                const binario = ascii.toString(2);
+                output.innerHTML = `ASCII: ${ascii} | BINÁRIO: ${binario}`;
+            }
+}
+</script>
+
+</html>
